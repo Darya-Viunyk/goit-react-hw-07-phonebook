@@ -32,6 +32,7 @@ export const phoneBook = createSlice({
     });
   },
 });
+
 const persistConfig = {
   key: 'root',
   storage,
