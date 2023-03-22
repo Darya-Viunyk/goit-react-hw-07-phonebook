@@ -20,15 +20,13 @@ export const phoneBook = createSlice({
   },
   extraReducers: builder => {
     builder.addCase(fetchContacts.fulfilled, (state, { payload }) => {
-      state.contacts.items = payload;
+      state.items = payload;
     });
     builder.addCase(addContact.fulfilled, (state, { payload }) => {
-      state.contacts.items.push(payload);
+      state.items.push(payload);
     });
     builder.addCase(deleteContact.fulfilled, (state, { payload }) => {
-      state.contacts.items = state.contacts.items.filter(
-        it => it.id !== payload.id
-      );
+      state.items = state.items.filter(it => it.id !== payload.id);
     });
   },
 });
